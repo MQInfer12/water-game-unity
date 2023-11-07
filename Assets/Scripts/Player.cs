@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     private Vector2 playerDirection;
     private Vector2 facingDirection;
 
+    public int maxBullets = 6;
+    public int currentBullets = 6;
+
     // Start is called before the first frame update
     void Start()
     {

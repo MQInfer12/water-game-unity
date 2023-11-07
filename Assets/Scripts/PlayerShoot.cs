@@ -23,11 +23,14 @@ public class PlayerShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Vector2 shootingDirection = player.GetFacingDirection();
-        if(shootingDirection != Vector2.zero) {
-            GameObject newBullet = Instantiate(bulletPrefab, shootController.position, Quaternion.identity);
-            Bullet bullet = newBullet.GetComponent<Bullet>();
-            bullet.SetDirection(shootingDirection);
+        if(player.currentBullets > 0) {
+            Vector2 shootingDirection = player.GetFacingDirection();
+            if(shootingDirection != Vector2.zero) {
+                GameObject newBullet = Instantiate(bulletPrefab, shootController.position, Quaternion.identity);
+                Bullet bullet = newBullet.GetComponent<Bullet>();
+                bullet.SetDirection(shootingDirection);
+                player.currentBullets--;
+            }
         }
     }
 }

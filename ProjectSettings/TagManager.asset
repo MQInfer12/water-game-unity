@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Tap
+  - Jugador
+  - Three
   layers:
   - Default
   - TransparentFX
@@ -47,4 +50,7 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 2440556433
+    locked: 0
+  - name: Burning
+    uniqueID: 124921999
     locked: 0

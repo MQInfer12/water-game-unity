@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maumm\\Downloads\\Awa\\Assembly-CSharp.csproj",
-      "projectName": "Assembly-CSharp",
-      "projectPath": "C:\\Users\\maumm\\Downloads\\Awa\\Assembly-CSharp.csproj",
+      "projectUniqueName": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj",
+      "projectName": "NavMeshPlus",
+      "projectPath": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj",
       "packagesPath": "C:\\Users\\maumm\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\maumm\\Downloads\\Awa\\obj\\",
       "projectStyle": "PackageReference",

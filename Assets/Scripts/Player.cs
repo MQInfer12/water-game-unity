@@ -9,6 +9,11 @@ public class Player : MonoBehaviour
     private Vector2 playerDirection;
     private Vector2 facingDirection;
 
+    public Sprite downSprite;
+    public Sprite leftSprite;
+    public Sprite rightSprite;
+    public Sprite upSprite;
+
     public int maxBullets = 6;
     public int currentBullets = 6;
 
@@ -28,6 +33,14 @@ public class Player : MonoBehaviour
         if (playerDirection != Vector2.zero)
         {
             facingDirection = playerDirection;
+            if (directionX > 0)
+                GetComponent<SpriteRenderer>().sprite = rightSprite;
+            else if (directionX < 0) 
+                GetComponent<SpriteRenderer>().sprite = leftSprite;
+            else if (directionY > 0)
+                GetComponent<SpriteRenderer>().sprite = upSprite;
+            else if (directionY < 0)
+                GetComponent<SpriteRenderer>().sprite = downSprite;
         }
     }
 

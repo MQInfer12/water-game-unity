@@ -10,10 +10,36 @@ public class Bullet : MonoBehaviour
     private Vector2 direction;
     public float maxRange = 6.0f;
     private float currentRange = 0.0f;
+    [SerializeField] private GameObject destroyEffect;
+    public Sprite upSprite;
+    public Sprite downSprite;
+    public Sprite leftSprite;
+    public Sprite rightSprite;
+    public Sprite upLeftSprite;
+    public Sprite upRightSprite;
+    public Sprite downLeftSprite;
+    public Sprite downRightSprite;
 
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection;
+
+        if (newDirection == Vector2.up)
+            GetComponent<SpriteRenderer>().sprite = upSprite;
+        else if (newDirection == Vector2.down)
+            GetComponent<SpriteRenderer>().sprite = downSprite;
+        else if (newDirection == Vector2.left)
+            GetComponent<SpriteRenderer>().sprite = leftSprite;
+        else if (newDirection == Vector2.right)
+            GetComponent<SpriteRenderer>().sprite = rightSprite;
+        else if (newDirection == (Vector2.up + Vector2.left).normalized)
+            GetComponent<SpriteRenderer>().sprite = upLeftSprite;
+        else if (newDirection == (Vector2.up + Vector2.right).normalized)
+            GetComponent<SpriteRenderer>().sprite = upRightSprite;
+        else if (newDirection == (Vector2.down + Vector2.left).normalized)
+            GetComponent<SpriteRenderer>().sprite = downLeftSprite;
+        else if (newDirection == (Vector2.down + Vector2.right).normalized)
+            GetComponent<SpriteRenderer>().sprite = downRightSprite;
     }
 
     private void Update()
@@ -30,12 +56,9 @@ public class Bullet : MonoBehaviour
     {
         if(other.CompareTag("Wall"))
         {
-            Tilemap tilemap = other.GetComponent<Tilemap>();
-            if (tilemap != null)
-            {
-                Vector3 hitPosition = tilemap.WorldToCell(transform.position);
-                Vector3Int cellPosition = new Vector3Int((int)hitPosition.x, (int)hitPosition.y, 0);
-                tilemap.SetTile(cellPosition, null);
+            TilemapManager tilemapManager = FindObjectOfType<TilemapManager>();
+            if(tilemapManager != null) {
+                tilemapManager.PutOffFire(transform.position);
             }
             Dissapear();
         }
@@ -47,6 +70,7 @@ public class Bullet : MonoBehaviour
 
     private void Dissapear() 
     {
+        Instantiate(destroyEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine.Tilemaps;
 public class Threes : MonoBehaviour
 {
     public Tilemap treeTilemap;
-    public Tilemap burnedTreeTilemap;
-    public TileBase burningTile;
+    public TilemapManager tilemapManager;
+
     public float burnProbability = 0.5f;
 
     void Start()
@@ -23,11 +23,7 @@ public class Threes : MonoBehaviour
         {
             if (Random.value < burnProbability)
             {
-                TileBase treeTile = treeTilemap.GetTile(pos);
-                if (treeTile != null)
-                {
-                    burnedTreeTilemap.SetTile(pos, burningTile);
-                }
+                tilemapManager.PutOnFire(pos);
             }
         }
     }

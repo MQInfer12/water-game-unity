@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1854410863
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1033693252, guid: b1445b9acb92dff4b8f58aa5a3717f50, type: 3}
+  m_Sprite: {fileID: 859451823, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,6 +161,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bdcb46df418cd4ebe5218d49e18240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 8
   damage: 1
   maxRange: 3
+  destroyEffect: {fileID: 5821671666168346196, guid: 8595712f918b8ed43af89870e2b0b4d1, type: 3}
+  upSprite: {fileID: 1976162739, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  downSprite: {fileID: 859451823, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  leftSprite: {fileID: 1209670106, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  rightSprite: {fileID: 135987584, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  upLeftSprite: {fileID: -1319249032, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  upRightSprite: {fileID: -1911221147, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  downLeftSprite: {fileID: -790666067, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}
+  downRightSprite: {fileID: -1629126513, guid: b742a85ecf3719e4bae28ab2de19f002, type: 3}

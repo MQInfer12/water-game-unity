@@ -59,6 +59,11 @@ public class Bullet : MonoBehaviour
             TilemapManager tilemapManager = FindObjectOfType<TilemapManager>();
             if(tilemapManager != null) {
                 tilemapManager.PutOffFire(transform.position);
+                int contador = tilemapManager.FireCount();
+                if(contador == 0) {
+                    GameManager gameManager = FindObjectOfType<GameManager>();
+                    gameManager.FuegoApagado();
+                }
             }
             Dissapear();
         }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private Transform shootController;
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private TextMeshProUGUI textMesh;
     private Player player;
 
     void Start()
@@ -30,6 +32,7 @@ public class PlayerShoot : MonoBehaviour
                 Bullet bullet = newBullet.GetComponent<Bullet>();
                 bullet.SetDirection(shootingDirection);
                 player.currentBullets--;
+                textMesh.text = player.currentBullets.ToString();
             }
         }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gV+YjUFFO0fe4xOVVRuo3O1Gtp0vnsapeX1sj7atVapZnLfBjW6Xsul7k/0rgJSilH8uavH6aXyBnnqHDDXhRQ==",
+  "dgSpecHash": "tZRM3nWiGm55sD6VZa+Vz6SZHpqrPA1rXUA70h2OohcPg1czjvCBP0l5GHlvxubAePFp2jAFExCz3M8qqv7FHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj",
+  "projectFilePath": "C:\\Users\\maumm\\Downloads\\Awa\\Assembly-CSharp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

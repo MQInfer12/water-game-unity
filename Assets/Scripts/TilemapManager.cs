@@ -39,4 +39,19 @@ public class TilemapManager : MonoBehaviour
         burningTilemap.SetTile(cellPosition, null);
         fireTilemap.SetTile(cellPosition, null);
     }
+
+    public int FireCount()
+    {
+        BoundsInt bounds = fireTilemap.cellBounds;
+        int contadorTiles = 0;
+
+        foreach (Vector3Int posicion in bounds.allPositionsWithin)
+        {
+            if (fireTilemap.HasTile(posicion))
+            {
+                contadorTiles++;
+            }
+        }
+        return contadorTiles;
+    }
 }

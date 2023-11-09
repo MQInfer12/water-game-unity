@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class Enemy : MonoBehaviour
     public int life = 3;
     public float invulnerabilityTime = 2.0f; // Tiempo de invulnerabilidad en segundos
     private bool isInvulnerable = false;
+    private bool canBurn = true;
     Renderer enemyRenderer;
+    public Sprite caughtSprite;
+    [SerializeField] private TextMeshProUGUI textMesh;
 
     private void Start()
     {
@@ -33,18 +37,29 @@ public class Enemy : MonoBehaviour
     {
         if(other.CompareTag("Three"))
         {
-            Vector3 hitPosition = other.ClosestPoint(transform.position);
-            Vector3Int tilePosition = tilemapManager.treeTilemap.WorldToCell(hitPosition);
-            tilemapManager.PutOnFire(tilePosition);
+            if(canBurn) {
+                Vector3 hitPosition = other.ClosestPoint(transform.position);
+                Vector3Int tilePosition = tilemapManager.treeTilemap.WorldToCell(hitPosition);
+                tilemapManager.PutOnFire(tilePosition);
+            }
         }
         if(other.CompareTag("Jugador"))
         {
             if (!isInvulnerable)
             {
                 life--;
+                if(life >= 0) 
+                {
+                    textMesh.text = life.ToString();
+                }
                 if (life <= 0)
                 {
-                    Destroy(gameObject);
+                    isInvulnerable = true;
+                    GetComponent<SpriteRenderer>().sprite = caughtSprite;
+                    agent.speed = 0;
+                    canBurn = false;
+                    GameManager gameManager = FindObjectOfType<GameManager>();
+                    gameManager.AtraparArsonista();
                 }
                 else
                 {

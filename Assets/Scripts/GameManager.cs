@@ -42,13 +42,13 @@ public class GameManager : MonoBehaviour
     IEnumerator MostrarPerder()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(3);
     }
 
     IEnumerator MostrarGanar()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync(3);
+        SceneManager.LoadSceneAsync(4);
     }
 
     void TiempoTerminado()

@@ -29,19 +29,35 @@ public class Player : MonoBehaviour
         float directionX = Input.GetAxisRaw("Horizontal");
         float directionY = Input.GetAxisRaw("Vertical");
 
-        playerDirection = new Vector2(directionX, directionY).normalized;
-        if (playerDirection != Vector2.zero)
+        if (Input.touchCount > 0)
         {
+            Touch touch = Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            playerDirection = (new Vector2(touchPosition.x, touchPosition.y) - rb.position).normalized;
             facingDirection = playerDirection;
-            if (directionX > 0)
-                GetComponent<SpriteRenderer>().sprite = rightSprite;
-            else if (directionX < 0) 
-                GetComponent<SpriteRenderer>().sprite = leftSprite;
-            else if (directionY > 0)
-                GetComponent<SpriteRenderer>().sprite = upSprite;
-            else if (directionY < 0)
-                GetComponent<SpriteRenderer>().sprite = downSprite;
+            UpdateSpriteDirection();
         }
+        else
+        {
+            playerDirection = new Vector2(directionX, directionY).normalized;
+            if (playerDirection != Vector2.zero)
+            {
+                facingDirection = playerDirection;
+                UpdateSpriteDirection();
+            }
+        }
+    }
+
+    void UpdateSpriteDirection()
+    {
+        if (facingDirection.x > 0)
+            GetComponent<SpriteRenderer>().sprite = rightSprite;
+        else if (facingDirection.x < 0)
+            GetComponent<SpriteRenderer>().sprite = leftSprite;
+        else if (facingDirection.y > 0)
+            GetComponent<SpriteRenderer>().sprite = upSprite;
+        else if (facingDirection.y < 0)
+            GetComponent<SpriteRenderer>().sprite = downSprite;
     }
 
     void FixedUpdate() 

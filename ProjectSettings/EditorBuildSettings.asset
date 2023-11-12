@@ -15,8 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/FinalMalo.unity
+    guid: 8eabf7c94f32e3f498905e68f1ae88ba
+  - enabled: 1
     path: Assets/Scenes/Perdiste.unity
     guid: fe8e949eafeb8854fbb0705a8af41bef
+  - enabled: 1
+    path: Assets/Scenes/FinalBueno.unity
+    guid: cce7f2723225dd14db1026f0bafd3090
   - enabled: 1
     path: Assets/Scenes/Ganaste.unity
     guid: 9fdd4eb61fa0f1041a15c572150521de

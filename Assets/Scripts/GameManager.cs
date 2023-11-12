@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     IEnumerator MostrarGanar()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadSceneAsync(5);
     }
 
     void TiempoTerminado()

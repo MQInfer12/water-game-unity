@@ -3692,7 +3692,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864a2ae76cfe44e429feea1487585196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasPrefab: {fileID: 6357494790598092848, guid: 499464e066319a945b528476374397e2, type: 3}
+  canvasPrefab: {fileID: 860316773391315876, guid: 3191c82fea3a2e1418a8d9bf435237f4, type: 3}
+  mision: {fileID: 21300000, guid: cbdb8bdfcadf0414a837b660cc2ac121, type: 3}
+  ganaste: {fileID: 21300000, guid: 1569ca37c7cc75c4aa96b52bbdcdd674, type: 3}
+  perdiste: {fileID: 21300000, guid: 0af69fcbda82b2f43aa68a97f255afb7, type: 3}
+  apaga: {fileID: 21300000, guid: 596aecd6c978c9f4eb5cb2f551aae5c4, type: 3}
 --- !u!4 &2026604478
 Transform:
   m_ObjectHideFlags: 0

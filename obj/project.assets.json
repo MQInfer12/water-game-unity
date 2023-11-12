@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETStandard,Version=v2.1": {}
+    ".NETStandard,Version=v2.1": {
+      "NavMeshPlus/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "compile": {
+          "bin/placeholder/NavMeshPlus.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NavMeshPlus.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NavMeshPlus/1.0.0": {
+      "type": "project",
+      "path": "NavMeshPlus.csproj",
+      "msbuildProject": "NavMeshPlus.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETStandard,Version=v2.1": []
+    ".NETStandard,Version=v2.1": [
+      "NavMeshPlus >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\maumm\\.nuget\\packages\\": {},
@@ -14,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj",
-      "projectName": "NavMeshPlus",
-      "projectPath": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj",
+      "projectUniqueName": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlusEditor.csproj",
+      "projectName": "NavMeshPlusEditor",
+      "projectPath": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlusEditor.csproj",
       "packagesPath": "C:\\Users\\maumm\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\maumm\\Downloads\\Awa\\obj\\",
       "projectStyle": "PackageReference",
@@ -39,7 +58,11 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj": {
+              "projectPath": "C:\\Users\\maumm\\Downloads\\Awa\\NavMeshPlus.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
